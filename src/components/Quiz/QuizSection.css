@@ -1,0 +1,9 @@
+.wrapper {
+  width: 50%;
+}
+.title {
+  color: var(--light-grey);
+  text-transform: uppercase;
+  font-size: 3.6rem;
+  font-weight: var(--bold);
+}
