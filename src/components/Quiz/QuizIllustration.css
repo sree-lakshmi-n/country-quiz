@@ -1,0 +1,14 @@
+.illustration-container__quiz {
+  width: 20%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-60%);
+  -webkit-transform: translateY(-60%);
+  -moz-transform: translateY(-60%);
+  -ms-transform: translateY(-60%);
+  -o-transform: translateY(-60%);
+}
+.illustration__quiz {
+  width: 100%;
+}
