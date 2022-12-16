@@ -1,8 +1,11 @@
 import "./App.css";
 import QuizSection from "./components/Quiz/QuizSection";
+import { useState } from "react";
 
 function App() {
   const optionsNum = 4;
+  const [qnData, setQnData] = useState({});
+  const [options, setOptions] = useState([]);
   const generateRandomNum = (maxNum) => {
     return Math.floor(Math.random() * maxNum);
   };
@@ -17,15 +20,15 @@ function App() {
   };
   const generateQn = (countryData) => {
     const random = generateRandomNum(2);
-    const qnData = {};
+    const qn = {};
     if (random === 0) {
-      qnData.flag = countryData.flags.svg;
-      qnData.question = "Which country does this flag belong to?";
+      qn.flag = countryData.flags.svg;
+      qn.question = "Which country does this flag belong to?";
     } else {
-      qnData.question = `${countryData.capital} is the capital of `;
+      qn.question = `${countryData.capital} is the capital of `;
     }
-    qnData.answer = countryData.name;
-    return qnData;
+    qn.answer = countryData.name;
+    return qn;
   };
   const setQnsAndOptions = (data) => {
     const randomNums = generateRandomUniqueNums(data.length);
@@ -33,8 +36,8 @@ function App() {
     const qnNum = generateRandomNum(countries.length);
 
     const question = generateQn(countries[qnNum]);
-    const options = countries.map((country) => country.name);
-    console.log(question, options);
+    const optionList = countries.map((country) => country.name);
+    return [question, optionList];
   };
 
   async function getCountryDetails(url) {
@@ -46,7 +49,10 @@ function App() {
   getCountryDetails(
     "https://restcountries.com/v2/all?fields=name,capital,flags"
   ).then((data) => {
-    setQnsAndOptions(data);
+    const [question, optionList] = setQnsAndOptions(data);
+    // setQnData(question);
+    // setOptions(optionList);
+    console.log(question, optionList);
   });
 
   return (
