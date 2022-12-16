@@ -1,13 +1,16 @@
 import "./QuizSection.css";
 import Container from "../UI/Container";
 import QuizIllustration from "./QuizIllustration";
+import Question from "./Question";
+import OptionsContainer from "./OptionsContainer";
 const QuizSection = () => {
   return (
     <div className="wrapper">
       <h1 className="title">Country Quiz</h1>
       <Container>
         <QuizIllustration />
-        <p className="question"></p>
+        <Question />
+        <OptionsContainer />
       </Container>
     </div>
   );
