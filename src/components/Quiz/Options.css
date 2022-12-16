@@ -1,0 +1,13 @@
+.option {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  padding: 1.6rem;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  border-radius: 1.2rem;
+  color: rgba(96, 102, 208, 0.8);
+}
+.option-result {
+  margin-left: auto;
+}
